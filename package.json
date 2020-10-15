@@ -1,0 +1,12 @@
+{
+  "name": "somed00d.github.io",
+  "version": "1.0.0",
+  "description": "Personal website and blog",
+  "main": "index.js",
+  "repository": "https://github.com/somed00d/somed00d.github.io.git",
+  "author": "somed00d <41293874+somed00d@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
