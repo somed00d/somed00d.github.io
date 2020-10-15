@@ -16,5 +16,3 @@ Throughout this period I kept an interest in the dark web and how it was being u
 My larger focus is on drug trafficking at the moment, more specifically how drug trafficking organizations in Mexico and elsewhere use the Internet. I'd always wanted to start my own website that brought together some of the things I'd learned from past adventures. At the beginning of the year I started [narco.news](https://narco.news) with that mission in mind. It provides a central place to aggregate and organize all the information related to this.
 
 That's as far as we've gotten in this dudes *Book of Life*. Where it leads next is anyone's guess!
-
-[@just_some_d00d](https://twitter.com/just_some_d00d)
