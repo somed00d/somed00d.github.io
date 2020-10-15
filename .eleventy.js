@@ -13,6 +13,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dateReadable', date => {
     return day(date).format('h:mm:ss A - MM/DD/YYYY');
   });
+  return {
+    dir: {
+      output: 'docs'
+    }
+  };
 };
 
 function extractExcerpt(article) {
