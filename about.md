@@ -1,3 +1,6 @@
+---
+layout: base.njk
+---
 # About
 
 I've been on Twitter a long time and my focus has jumped all over the place, but it tends to center around computer and criminals. It first started long ago with *infosec* which got me curious about the [dark web](https://en.wikipedia.org/wiki/Dark_web). By this time the first [Silk Road](https://en.wikipedia.org/wiki/Silk_Road_(marketplace)) marketplace had already been shut down, but the second was alive and well. It was at this point that I started to become curious about [operations security](https://en.wikipedia.org/wiki/Operations_security) (OPSEC). At the same time I was turning more into a news junkie. One of the first large events I remember following closely via social media was the [Israeli-Palestinian conflict](https://en.wikipedia.org/wiki/2015%E2%80%932016_wave_of_violence_in_Israeli-Palestinian_conflict). Around this time was when I discovered [grugq](https://twitter.com/thegrugq). We're talking the [Brown Moses](https://twitter.com/EliotHiggins) days here, when people were starting to use social media to connect the dots better. This all lead me to discovering [switch_d](https://twitter.com/switch_d), who got me thinking about the convergence of social media with terrorism. The [Syrian civil war](https://en.wikipedia.org/wiki/Syrian_civil_war) started really coming into focus on Twitter and the Islamic State was rising.
@@ -12,6 +15,6 @@ Throughout this period I kept an interest in the dark web and how it was being u
 
 My larger focus is on drug trafficking at the moment, more specifically how drug trafficking organizations in Mexico and elsewhere use the Internet. I'd always wanted to start my own website that brought together some of the things I'd learned from past adventures. At the beginning of the year I started [narco.news](https://narco.news) with that mission in mind. It provides a central place to aggregate and organize all the information related to this.
 
-That's as far as we've gotten in this dudes *Book of Life*. We're it leads next is anyone's guess!
+That's as far as we've gotten in this dudes *Book of Life*. Where it leads next is anyone's guess!
 
 [@just_some_d00d](https://twitter.com/just_some_d00d)
