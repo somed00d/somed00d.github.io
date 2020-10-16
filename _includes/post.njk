@@ -7,7 +7,7 @@ layout: base.njk
   {{ content | safe }}
   </p>
   <div onclick="goBack()"><strong>Back</strong></div>
-  <time datetime="{{ date | dateReadable }}">{{ date | dateReadable }}</time> 
+  <time datetime="{{ date | dateLong }}">{{ date | dateLong }}</time> 
 </article>
 <script>
 function goBack() {

@@ -6,12 +6,12 @@ day.extend(relativeTime);
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
-  eleventyConfig.addFilter('dateFrom', date => {
-    return day(date).fromNow();
+  eleventyConfig.addFilter('dateShort', date => {
+    return day(date).format('dddd, MMM DD, YYYY');
   });
 
-  eleventyConfig.addFilter('dateReadable', date => {
-    return day(date).format('h:mm:ss A - MM/DD/YYYY');
+  eleventyConfig.addFilter('dateLong', date => {
+    return day(date).format('dddd, MMMM D, YYYY h:mm A');
   });
   return {
     dir: {
