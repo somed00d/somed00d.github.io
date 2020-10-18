@@ -1,10 +1,15 @@
 const day = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 day.locale('en');
 day.extend(relativeTime);
 
 module.exports = function (eleventyConfig) {
+  // Plugins
+  eleventyConfig.addPlugin(syntaxHighlight);
+
+  // Shortcodes
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
   eleventyConfig.addFilter('dateShort', date => {
     return day(date).format('dddd, MMM DD, YYYY');
@@ -13,6 +18,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dateLong', date => {
     return day(date).format('dddd, MMMM D, YYYY h:mm A');
   });
+
+  // Passthrough
+  eleventyConfig.addPassthroughCopy({ "static": "/" });
+
   return {
     dir: {
       output: 'docs'
