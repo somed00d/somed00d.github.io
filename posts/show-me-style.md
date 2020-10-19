@@ -1,14 +1,14 @@
 ---
 layout: post.njk
 title: Setting up Sass in Eleventy
-date: 2020-10-19 11:00:00 -4
+date: 2020-10-19 10:33:00 -4
 tags: ['post', 'development']
 ---
 <!-- Excerpt Start -->
 I've gotten all of my assets situated and started building out style sheets. Let's go over everything I've added.
 <!-- Excerpt End -->
 
-In the last [post](https://somed00d.github.io/building-the-website) we went through how to get set up and initialized. We started by creating the folder our website would live in. Next adding `@11ty/eleventy` to it, a home page, about page, and blog. We then made it so that all of our blog entries would be listed on the home page. At that point we didn't have any CSS on the website nor any code block syntax highlighting. Our next step was to get both of those things in order to be able to add a little bit of style. Key word being little bit. I'm trying to keep it as minimal as I can around here.
+In the last [post](https://somed00d.github.io/posts/2020/building-the-website) we went through how to get set up and initialized. We started by creating the folder our website would live in. Next adding `@11ty/eleventy` to it, a home page, about page, and blog. We then made it so that all of our blog entries would be listed on the home page. At that point we didn't have any CSS on the website nor any code block syntax highlighting. Our next step was to get both of those things in order to be able to add a little bit of style. Key word being little bit. I'm trying to keep it as minimal as I can around here.
 
 ## Sass
 
