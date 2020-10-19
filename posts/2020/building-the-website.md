@@ -17,7 +17,7 @@ I've been building websites for awhile now, in all sorts of different ways. But 
 We've started off with just the necessities, a home page, about page, and a blog. That is pretty much it, the website contains zero images and zero CSS as of the writing of the post. To get myself started I used a [tutorial](https://keepinguptodate.com/pages/2019/06/creating-blog-with-eleventy/) that I found in the 11ty documentation. Below I've made a list of everything it includes.
 
   1. Initiate node app
-  2. Add `eleventy`
+  2. Add `@11ty/eleventy`
   3. Create about page
   4. Create base template
   5. Create navigation

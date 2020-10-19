@@ -2,6 +2,7 @@ const day = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginSass = require("eleventy-plugin-sass");
+const typesetPlugin = require('eleventy-plugin-typeset');
 
 day.locale('en');
 day.extend(relativeTime);
@@ -13,6 +14,7 @@ module.exports = function (eleventyConfig) {
     showLineNumbers: true
   });
   eleventyConfig.addPlugin(pluginSass);
+  eleventyConfig.addPlugin(typesetPlugin);
 
   // Shortcodes
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));

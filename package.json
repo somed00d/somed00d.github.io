@@ -20,6 +20,7 @@
     "cross-env": "^7.0.2",
     "dayjs": "^1.9.3",
     "eleventy-plugin-sass": "^1.1.1",
+    "eleventy-plugin-typeset": "github:liamfiddler/eleventy-plugin-typeset",
     "prettier": "^2.1.2"
   }
 }
