@@ -15,3 +15,8 @@ p code {
   padding: 2px 4px;
   border-radius: 3px;
 }
+
+mark {
+  padding: 2px 0;
+  background-color: lighten(#282a36, 15%);
+}
