@@ -1,13 +1,18 @@
 const day = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginSass = require("eleventy-plugin-sass");
 
 day.locale('en');
 day.extend(relativeTime);
 
 module.exports = function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    trim: true,
+    showLineNumbers: true
+  });
+  eleventyConfig.addPlugin(pluginSass);
 
   // Shortcodes
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
@@ -18,9 +23,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dateLong', date => {
     return day(date).format('dddd, MMMM D, YYYY h:mm A');
   });
-
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "static": "/" });
+
+
+    // Watch for changes to my source files
+    if (eleventyConfig.addWatchTarget) {
+      eleventyConfig.addWatchTarget("static/scss");
+      eleventyConfig.addWatchTarget("static/js");
+    } else {
+      console.log(
+        "A future version of 11ty will allow live-reloading of JS and Sass. You can update 11ty with the next release to get these features."
+      );
+    }
 
   return {
     dir: {

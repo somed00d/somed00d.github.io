@@ -7,17 +7,11 @@ pagination:
   alias: posts
 ---
 {% for post in posts %}
-  <article>
+  <article class="home-page-article">
     <h1>
       <a href="{{ post.url | url }}">{{ post.data.title }}</a>
     </h1>
-    <time title="{{ post.date | dateLong }}">{{ post.date | dateShort }}</time>
+    <time datetime="{{ post.date | dateShort }}" title="{{ post.date | dateLong }}">{{ post.date | dateShort }}</time>
     {% excerpt post %}
-    <a
-    href="{{ post.url | url }}"
-    aria-label="Read more on {{ post.data.title }}"
-    >
-    Read more
-    </a>
   </article>
 {% endfor %}

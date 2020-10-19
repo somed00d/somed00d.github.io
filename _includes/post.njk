@@ -1,13 +1,13 @@
 ---
 layout: base.njk
 ---
-<article>
+<article class="post">
   <h1>{{ title }}</h1>
+  <time datetime="{{ date | dateLong }}">{{ date | dateLong }}</time> 
   <p> 
   {{ content | safe }}
   </p>
-  <div onclick="goBack()"><strong>Back</strong></div>
-  <time datetime="{{ date | dateLong }}">{{ date | dateLong }}</time> 
+  <div onclick="goBack()" class="back-button">Back</div>
 </article>
 <script>
 function goBack() {

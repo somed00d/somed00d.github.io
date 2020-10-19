@@ -2,17 +2,24 @@
 <html lang="en"> 
 <head> 
   <meta charset="utf-8"> 
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-   {# Prism Theme #}
-   <link href="/highlight.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="/static/scss/main.css">
   <title>@just_some_d00d</title> 
 </head> 
 <body> 
   <header>
+  <nav>
     <a href="/" title="Home">Home</a>
     <a href="/about" title="About">About</a>
-    <a href="https://twitter.com/just_some_d00d" title="Twitter" target="_blank">Twitter</a>
-    <a href="https://github.com/somed00d" title="Github" target="_blank">Github</a>
+    <a href="https://twitter.com/just_some_d00d" title="Twitter" target="_blank">
+    <img alt="Twitter logo" title="Twitter" src="/icons/twitter.svg"/>
+    </a>
+    <a href="https://github.com/somed00d" title="Github" target="_blank">
+    <img alt="Github logo" title="Github" src="/icons/github.svg"/>
+    </a>
+  </nav>
+  <hr/>
   </header>
   <main>
     {{ content | safe }}

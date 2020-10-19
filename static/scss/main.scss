@@ -1,2 +1,12 @@
 // Global
-@import "./_partials/highlight";
+@import './_partials/initialize';
+@import './base';
+@import './typography';
+@import './_partials/highlight';
+
+// Partials
+@import './_partials/home-page-articles';
+@import './_partials/codeblock';
+@import './_partials/navigation';
+@import './_partials/header';
+@import './_partials/post';

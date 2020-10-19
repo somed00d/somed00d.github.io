@@ -37,7 +37,6 @@ This assumes you have access to a terminal with bash or similar. First things fi
 Make directory, change into directory, initiate app
 
 ```bash
-
 mkdir somed00d.github.io
 cd somed00d.github.io
 yarn init
@@ -58,7 +57,6 @@ touch about.md
 Add some words to it
 
 ```md
-
 # About page
 
 This page tells you things that are about me!
@@ -129,7 +127,7 @@ pagination:
   reverse: true
   alias: posts
 ---
-
+{% raw %}
 {% for post in posts %}
   <article>
     <h1>
@@ -138,6 +136,7 @@ pagination:
       <time title="{{ post.date | dateReadable }}">{{ post.date | dateFrom }}</time>
   </article>
 {% endfor %}
+{% endraw %}
 ```
 
 Install `dayjs`
@@ -228,11 +227,13 @@ Create a `post.njk` template file in the `_includes` folder
 ---
 layout: base.njk
 ---
+{% raw %}
 <article>
   <h1>{{ title }}</h1>
   <time datetime="{{ date | dateIso }}">{{ date | dateReadable }}</time>
   {{ content | safe }}
 </article>
+{% endraw %}
 ```
 
 Update front matter in posts with new template
