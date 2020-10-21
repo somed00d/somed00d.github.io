@@ -28,6 +28,7 @@
     background-color: hsl(265°, 89%, 78%);
     padding: 2px 4px;
     border-radius: 3px;
+    cursor: pointer;
     &:hover {
       background-color: darken(hsl(265°, 89%, 78%), 5%);
     }
