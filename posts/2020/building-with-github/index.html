@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="/static/scss/main.css">
+  <title>@just_some_d00d</title> 
+</head> 
+<body> 
+  <header>
+  <nav>
+    <a href="/" title="Home">Home</a>
+    <a href="/about" title="About">About</a>
+    <a href="https://twitter.com/just_some_d00d" title="Twitter" target="_blank">
+    <img alt="Twitter logo" title="Twitter" src="/icons/twitter.svg"/>
+    </a>
+    <a href="https://github.com/somed00d" title="Github" target="_blank">
+    <img alt="Github logo" title="Github" src="/icons/github.svg"/>
+    </a>
+  </nav>
+  <hr/>
+  </header>
+  <main>
+    <article class="post">
+  <h1>Build and deployment</h1>
+  <time datetime="2020-10-21T06:35:00">Wednesday, October 21, 2020 6:35 AM</time> 
+  <p> 
+  <!-- Excerpt Start -->
+<p>The final step before we start getting crazy is to configure things to build and deploy</p>
+<!-- Excerpt End -->
+<p>Before we start getting crazy with things around here we need to set it up so that everything builds and deploys automatically. There are a handful of ways to do this, the easiest these days seems to be to use <a href="https://github.com/features/actions">GitHub Actions</a>. I haven't explored Actions that much but it's a great things to have on GitHub now. Before you had to pull your code to another website to do all that magic for you, now GitHub will do it for you. I found a <a href="https://www.rockyourcode.com/how-to-deploy-eleventy-to-github-pages-with-github-actions/">blog post</a> explaining how to get all this properly configured with Eleventy. It uses an Action called <a href="https://github.com/peaceiris/actions-gh-pages">GitHub Actions for GitHub Pages</a>.</p>
+<h2>Create folders and file</h2>
+<p>First we need to create the proper folder for our YAML build file to live in.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> .github<br><span class="token function">mkdir</span> .github/workflows<br><span class="token function">touch</span> .github/workflows/build.yml</code></pre>
+<h2>Build file</h2>
+<p>The build file is a typical YAML file named <code>build.yml</code>. This is the file that Github looks at when you commit to your repository and decides which Action to run. The file is pretty self explanatory. It watches the master branch for commits, uses Ubuntu 20.04 and node 13 for the build. First it runs <code>yarn</code> to install all the dependencies and then runs <code>yarn build</code> to build the website. Lastly it takes the docs directory and pushes it to the gh-pages branch of the repository.</p>
+<pre class="language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> Build Eleventy<br><br><span class="token key atrule">on</span><span class="token punctuation">:</span><br>  <span class="token key atrule">push</span><span class="token punctuation">:</span><br>    <span class="token key atrule">branches</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> master<br><span class="token key atrule">jobs</span><span class="token punctuation">:</span><br>  <span class="token key atrule">build</span><span class="token punctuation">:</span><br>    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span><span class="token number">20.04</span><br>    <span class="token key atrule">strategy</span><span class="token punctuation">:</span><br>      <span class="token key atrule">matrix</span><span class="token punctuation">:</span><br>        <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>13.x<span class="token punctuation">]</span><br>    <span class="token key atrule">steps</span><span class="token punctuation">:</span><br>      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2<br>      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Use Node.js $<span class="token punctuation">{</span><span class="token punctuation">{</span> matrix.node<span class="token punctuation">-</span>version <span class="token punctuation">}</span><span class="token punctuation">}</span><br>        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v1<br>        <span class="token key atrule">with</span><span class="token punctuation">:</span><br>          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> matrix.node<span class="token punctuation">-</span>version <span class="token punctuation">}</span><span class="token punctuation">}</span><br>      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install dependencies &amp; build<br>        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string"><br>          yarn<br>          yarn build</span><br>      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy<br>        <span class="token key atrule">uses</span><span class="token punctuation">:</span> peaceiris/actions<span class="token punctuation">-</span>gh<span class="token punctuation">-</span>pages@v3<br>        <span class="token key atrule">with</span><span class="token punctuation">:</span><br>          <span class="token key atrule">publish_dir</span><span class="token punctuation">:</span> ./docs<br>          <span class="token key atrule">github_token</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.GITHUB_TOKEN <span class="token punctuation">}</span><span class="token punctuation">}</span><br></code></pre>
+<h2>Change GitHub Pages setting</h2>
+<p>Since the GitHub Action deploys the built site to the gh-pages branch we need to change our settings for the repository to look in that branch for the build files.</p>
+<p><img src="/img/gh-pages-source-settings.png" alt="Screenshot of GitHub Pages settings"></p>
+<h2>Conclusion</h2>
+<p>You should be good to go now! Once you now make a commit to your repository it will start the build. It makes our life a lot easier since before we were building the website locally and then committing the code. That is definitely not the ideal way to do things since it will increase the size of your repo. Also it will make keeping track of changes more difficult since your commits are all littered with built files. I've added the build folder to my <code>.gitignore</code> file so that it doesn't get committed to my repo anymore. I still need to tweak my build because currently it appears it is adding some files more than once. In the next post I will go over everything we have done so far to make sure we are 100%.</p>
+
+  </p>
+  <div onclick="goBack()" class="back-button">Back</div>
+</article>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+  </main> 
+  <footer></footer> 
+</body> 
+</html>
