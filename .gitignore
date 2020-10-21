@@ -5,3 +5,4 @@ npm-debug.*
 dist
 _site
 .env
+docs
