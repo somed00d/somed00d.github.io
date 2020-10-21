@@ -1,11 +1,16 @@
 const day = require('dayjs');
 const relativeTime = require('dayjs/plugin/relativeTime');
+const timeZone = require('dayjs/plugin/timezone');
+const utc = require('dayjs/plugin/utc');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginSass = require("eleventy-plugin-sass");
 const typesetPlugin = require('eleventy-plugin-typeset');
 
 day.locale('en');
 day.extend(relativeTime);
+day.extend(timeZone);
+day.extend(utc);
+day.tz.setDefault("America/New_York");
 
 module.exports = function (eleventyConfig) {
   // Plugins
@@ -22,7 +27,7 @@ module.exports = function (eleventyConfig) {
     return day(date).format('dddd, MMM DD, YYYY');
   });
   eleventyConfig.addFilter('dateLong', date => {
-    return day(date).format('dddd, MMMM D, YYYY h:mm A');
+    return day(date).format('h:mm A · dddd · MMMM D, YYYY');
   });
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "static": "/" });
