@@ -1,8 +1,8 @@
 # Personal website
 
 ![GitHub](https://img.shields.io/github/license/somed00d/somed00d.github.io)
-![GitHub last commit](https://img.shields.io/github/last-commit/somed00d/somed00d.github.io)
 ![GitHub repo size](https://img.shields.io/github/repo-size/somed00d/somed00d.github.io)
+![GitHub last commit](https://img.shields.io/github/last-commit/somed00d/somed00d.github.io)
 ![W3C Validation](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fsomed00d.github.io)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fsomed00d.github.io)
 
