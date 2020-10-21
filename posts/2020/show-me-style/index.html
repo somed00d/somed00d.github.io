@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="/static/scss/main.css">
+  <title>@just_some_d00d</title> 
+</head> 
+<body> 
+  <header>
+  <nav>
+    <a href="/" title="Home">Home</a>
+    <a href="/about" title="About">About</a>
+    <a href="https://twitter.com/just_some_d00d" title="Twitter" target="_blank">
+    <img alt="Twitter logo" title="Twitter" src="/icons/twitter.svg"/>
+    </a>
+    <a href="https://github.com/somed00d" title="Github" target="_blank">
+    <img alt="Github logo" title="Github" src="/icons/github.svg"/>
+    </a>
+  </nav>
+  <hr/>
+  </header>
+  <main>
+    <article class="post">
+  <h1>Setting up Sass in Eleventy</h1>
+  <time datetime="Monday, October 19, 2020 2:33 PM">Monday, October 19, 2020 2:33 PM</time> 
+  <p> 
+  <!-- Excerpt Start -->
+<p>I've gotten all of my assets situated and started building out style sheets. Let's go over everything I've added.</p>
+<!-- Excerpt End -->
+<p>In the last <a href="https://somed00d.github.io/posts/2020/building-the-website">post</a> we went through how to get set up and initialized. We started by creating the folder our website would live in. Next adding <code>@11ty/eleventy</code> to it, a home page, about page, and blog. We then made it so that all of our blog entries would be listed on the home page. At that point we didn't have any CSS on the website nor any code block syntax highlighting. Our next step was to get both of those things in order to be able to add a little bit of style. Key word being little bit. I'm trying to keep it as minimal as I can around here.</p>
+<h2>Sass</h2>
+<p>The very first order of business was getting style sheets working. I've decided to use <a href="https://sass-lang.com/">Sass</a> which is just like CSS on steroids, though the CSS spec is catching up. I'm still using Sass though because I'm use to it and because it's less verbose thus less typing. Eleventy in their documentation lists a community made plugin called <code>eleventy-plugin-sass</code> found <a href="https://github.com/Sonaryr/eleventy-plugin-sass">here</a>. So to start, we're going to add that package to our website.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">yarn</span> <span class="token function">add</span> eleventy-plugin-sass</code></pre>
+<p>Next we need to add some things to our <code>.eleventy.js</code> file, first importing</p>
+<pre class="language-js"><code class="language-js"><span class="token keyword">const</span> pluginSass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'eleventy-plugin-sass'</span><span class="token punctuation">)</span></code></pre>
+<p>Next adding it to our config function. I'm not using any options so I removed <code>sassPluginOptions</code>. In addition we need to add a <em>passthrough</em> which essentially copies our style sheets into a folder in our output directory.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line">module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">eleventyConfig</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><mark class="highlight-line highlight-line-active">  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPlugin</span><span class="token punctuation">(</span>pluginSass<span class="token punctuation">)</span><span class="token punctuation">;</span></mark><br><span class="highlight-line"></span><br><span class="highlight-line"></span><br><mark class="highlight-line highlight-line-active">  eleventyConfig<span class="token punctuation">.</span><span class="token function">addPassthroughCopy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token string">"static"</span><span class="token operator">:</span> <span class="token string">"/"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></mark><br><span class="highlight-line"><span class="token punctuation">}</span></span></code></pre>
+<p>Now that we have set it all up, we need to create a place to store all of our style sheets. I've chosen to throw everything into a folder called <strong>static</strong>. Inside the static folder I've created another folder called <strong>scss</strong>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">mkdir</span> static<br><span class="token function">mkdir</span> static/scss<br><span class="token comment"># This can also be done in one command</span><br><span class="token function">mkdir</span> static/scss</code></pre>
+<p>For now I'm not going to discuss my naming convention because I'm still working it out. The more software you write the more you come to find that naming things effectively is difficult. But I'm going to certainly write about it once I've found something that works for me.</p>
+<p>Lastly we need to import our style sheets into the <code>&lt;head&gt;</code> of our website. For us at the moment that is found in the <code>_includes/base.njk</code> file.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/static/scss/main.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+<p>Sweet! We should be good to go now. Since I am using Sass all of my style sheets are basically loaded into one style sheet that Sass then takes and translates into the <code>main.css</code> file. Which we then import into the <code>&lt;head&gt;</code> of our base template. If you weren't using Sass though you could simply just add multiple CSS files here.</p>
+<p>At this point we've got Sass configured and our style sheets working. In an effort to keep these short and sweet, I'll write about adding syntax highlighting in the next post.</p>
+<p><em>PS: Purple is my favorite color if you didn't notice 😉</em></p>
+
+  </p>
+  <div onclick="goBack()" class="back-button">Back</div>
+</article>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+  </main> 
+  <footer></footer> 
+</body> 
+</html>
