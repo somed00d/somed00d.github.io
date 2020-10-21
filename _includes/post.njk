@@ -3,7 +3,7 @@ layout: base.njk
 ---
 <article class="post">
   <h1>{{ title }}</h1>
-  <time datetime="{{ date | dateLong }}">{{ date | dateLong }}</time> 
+  <time datetime="{{ date | dateISO }}">{{ date | dateLong }}</time> 
   <p> 
   {{ content | safe }}
   </p>

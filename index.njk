@@ -9,9 +9,9 @@ pagination:
 {% for post in posts %}
   <article class="home-page-article">
     <h1>
-      <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+      <a href="{{ post.url | url }}" alt="{{ post.data.title }}" title="{{ post.data.title }}">{{ post.data.title }}</a>
     </h1>
-    <time datetime="{{ post.date | dateShort }}" title="{{ post.date | dateLong }}">{{ post.date | dateShort }}</time>
+    <time datetime="{{ post.date | dateISO }}" title="{{ post.date | dateLong }}">{{ post.date | dateShort }}</time>
     {% excerpt post %}
   </article>
 {% endfor %}

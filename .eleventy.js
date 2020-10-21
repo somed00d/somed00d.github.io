@@ -9,35 +9,23 @@ day.extend(relativeTime);
 
 module.exports = function (eleventyConfig) {
   // Plugins
-  eleventyConfig.addPlugin(syntaxHighlight, {
-    trim: true,
-    showLineNumbers: true
-  });
+  eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginSass);
   eleventyConfig.addPlugin(typesetPlugin);
 
   // Shortcodes
   eleventyConfig.addShortcode('excerpt', article => extractExcerpt(article));
+  eleventyConfig.addFilter('dateISO', date => {
+    return day(date).format('YYYY-MM-DDTHH:mm:ss');
+  });
   eleventyConfig.addFilter('dateShort', date => {
     return day(date).format('dddd, MMM DD, YYYY');
   });
-
   eleventyConfig.addFilter('dateLong', date => {
     return day(date).format('dddd, MMMM D, YYYY h:mm A');
   });
   // Passthrough
   eleventyConfig.addPassthroughCopy({ "static": "/" });
-
-
-    // Watch for changes to my source files
-    if (eleventyConfig.addWatchTarget) {
-      eleventyConfig.addWatchTarget("static/scss");
-      eleventyConfig.addWatchTarget("static/js");
-    } else {
-      console.log(
-        "A future version of 11ty will allow live-reloading of JS and Sass. You can update 11ty with the next release to get these features."
-      );
-    }
 
   return {
     dir: {
