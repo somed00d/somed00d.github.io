@@ -1,0 +1,26 @@
+#pagination {
+  a {
+    text-decoration: none;
+    font-size: 11px;
+  }
+  svg {
+    margin-top: 5px;
+    height: 20px;
+    width: 20px;
+  }
+  ol {
+    display: flex;
+    align-items: center;
+  }
+  li {
+    display: inline;
+    list-style: none;
+  }
+  [aria-current] {
+    background-color: #e6e6e6;
+    color: #262626;
+    font-size: 11px;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+}
