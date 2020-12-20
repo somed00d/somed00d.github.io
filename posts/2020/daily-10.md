@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: I need a consistent name for these
+title: Daily
 date: 2020-12-16 23:59:00
 tags: ['post']
 ---

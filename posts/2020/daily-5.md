@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: The record is four
+title: Daily
 date: 2020-12-9 23:33:00
 tags: ['post']
 ---

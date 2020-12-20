@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: The dangers of reading while lying down
+title: Daily
 date: 2020-12-07 23:30:00
 tags: ['post',]
 ---

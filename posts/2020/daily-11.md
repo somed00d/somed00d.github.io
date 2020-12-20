@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Still don't have a creative name
+title: Daily
 date: 2020-12-19 01:32:00
 tags: ['post']
 ---

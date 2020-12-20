@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Only A Single Tomato
+title: Daily
 date: 2020-12-6 01:30:00
 tags: ['post']
 ---

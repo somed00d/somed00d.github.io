@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Fortunate
+title: Daily
 date: 2020-12-15 23:54:00
 tags: ['post']
 ---

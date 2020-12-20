@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Progress can be a stubborn thing
+title: Daily
 date: 2020-12-11 00:48:00
 tags: ['post']
 ---

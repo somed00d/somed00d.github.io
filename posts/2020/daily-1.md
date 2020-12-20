@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Something
+title: Daily Start
 date: 2020-12-05
 tags: ['post']
 ---

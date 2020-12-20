@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Slow Day
+title: Daily
 date: 2020-12-14 23:49:00
 tags: ['post']
 ---

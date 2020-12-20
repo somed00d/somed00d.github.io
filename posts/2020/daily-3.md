@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Onward 
+title: Daily
 date: 2020-12-07 01:40:00
 tags: ['post']
 ---

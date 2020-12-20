@@ -1,6 +1,6 @@
 ---
 layout: post.njk
-title: Be Careful What You Wish For
+title: Daily
 date: 2020-12-13 23:00:00
 tags: ['post']
 ---
