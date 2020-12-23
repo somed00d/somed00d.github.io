@@ -40,6 +40,7 @@ a {
   color: hsl(265°, 89%, 78%);
   cursor: pointer;
   font-weight: 600;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
   &:active {
     color: darken(hsl(265°, 89%, 78%), 5%);
   }
