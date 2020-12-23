@@ -11,27 +11,27 @@ pagination:
     <h1>
       <a href="{{ post.url | url }}" title="{{ post.data.title }}">{{ post.data.title }}</a>
     </h1>
-    <time datetime="{{ post.date | dateISO }}" title="{{ post.date | dateLong }}">{{ post.date | dateLong }}</time>
+    <time datetime="{{ post.date | dateISO }}" title="{{ post.date | dateLong }}">
+    {{ post.date | dateFrom }}
+    {% if post.date | dateFrom < 1 %}
+    days ago
+    {% endif %}
+    {% if post.date | dateFrom == 1 %}
+    day ago
+    {% endif %}
+    {% if post.date | dateFrom > 1 %}
+    days ago
+    {% endif %}
+    </time>
+    <time datetime="{{ post.date | dateISO }}" title="{{ post.date | dateLong }}">· {{ post.date | dateShort }}</time>
     {% excerpt post %}
   </article>
 {% endfor %}
 
 <nav id="pagination" aria-labelledby="pagination">
   <ol>
-    {# <li>{% if page.url != pagination.href.first %}<a href="{{ pagination.href.first }}">First</a>{% else %}First{% endif %}</li> #}
-    <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#C1A4EA">
-    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
-    </svg>
-    </a>{% else %}{% endif %}</li>
 {%- for pageEntry in pagination.pages %}
     <li><a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %}>{{ loop.index }}</a></li>
 {%- endfor %}
-    <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#C1A4EA">
-    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z" clip-rule="evenodd" />
-    </svg>
-    </a>{% else %}{% endif %}</li>
-    {# <li>{% if page.url != pagination.href.last %}<a href="{{ pagination.href.last }}">Last</a>{% else %}Last{% endif %}</li> #}
   </ol>
 </nav>

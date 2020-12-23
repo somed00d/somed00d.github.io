@@ -1,26 +1,31 @@
 #pagination {
-  a {
-    text-decoration: none;
-    font-size: 11px;
-  }
-  svg {
-    margin-top: 5px;
-    height: 20px;
-    width: 20px;
-  }
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+
   ol {
     display: flex;
     align-items: center;
-  }
-  li {
-    display: inline;
-    list-style: none;
+    a {
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      font-family: monospace;
+      padding: 1em;
+      border-radius: 3px;
+      &:hover {
+        background-color: #f5f5f5;
+        font-weight: 600;
+      }
+    }
+    li {
+      display: inline;
+      list-style: none;
+    }
   }
   [aria-current] {
-    background-color: #e6e6e6;
-    color: #262626;
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 3px;
+    background-color: #f0f0f0;
+    color: hsl(265°, 89%, 78%);
+    font-weight: 600;
   }
 }
