@@ -4,7 +4,6 @@ layout: base.njk
 <article class="post">
   <h1>{{ title }}</h1>
   <time datetime="{{ page.date | dateISO }}">{{ page.date | dateLong }}</time> 
-  <p> 
   {{ content | safe }}
-  </p>
 </article>
+<script>
