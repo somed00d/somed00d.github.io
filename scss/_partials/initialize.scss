@@ -41,6 +41,9 @@ a {
   cursor: pointer;
   font-weight: 600;
   -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+  text-decoration-style: dotted;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 1.5px;
   &:active {
     color: darken(hsl(265°, 89%, 78%), 5%);
   }
@@ -78,5 +81,17 @@ img {
     animation-play-state: paused !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+blockquote {
+  font-family: serif;
+  background-color: #f3edfb;
+  padding: 5px;
+  margin: 1em 1em;
+  border-radius: 3px;
+  p {
+    background-color: #f3edfb !important;
+    margin: 5px;
   }
 }
