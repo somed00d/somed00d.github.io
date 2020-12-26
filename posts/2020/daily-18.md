@@ -14,5 +14,4 @@ One thing that makes Christmas less entertaining is the lack of snow. I grew up 
 
 <img src="/img/its-beginning-to-feel.gif"
      alt="It's Beginning to feel"
-     class="max-w-2xl"
-     style="box-shadow: none"/>
+     style="box-shadow:none;width:60%;margin-top:2em"/>
