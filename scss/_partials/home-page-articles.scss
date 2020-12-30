@@ -1,20 +1,31 @@
 .home-page-article {
-  margin: 1em 0;
+  border-bottom: 1px dotted #fafbfb;
+  max-width: 400px;
+  .title-date {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    max-width: 350px;
+  }
+  a {
+    text-decoration: none;
+  }
   time {
     font-family: 'Fira Code';
+    color: #a7a9aa;
     font-size: 12px;
     font-weight: 400;
+    margin-left: 2em;
   }
   h1 {
     font-size: 2em;
     font-family: serif;
-    font-weight: 600;
+    font-weight: 500;
   }
   p {
-    margin: 0;
-    max-width: 400px;
-  }
-  a {
-    text-decoration-style: solid;
+    margin: 0.25em 0 0.5em 0;
+    max-width: 325px;
+    font-size: 14px;
+    padding: 0 5px;
   }
 }
