@@ -31,7 +31,7 @@ module.exports = function (eleventyConfig) {
     return day(date).format('MMM DD, YYYY');
   });
   eleventyConfig.addFilter('dateLong', date => {
-    return day(date).format('h:mm A · dddd · MMMM D, YYYY');
+    return day(date).format('h:mm A · MMMM D, YYYY');
   });
   eleventyConfig.addFilter('dateFrom', date => {
     return day().diff(date, 'days');

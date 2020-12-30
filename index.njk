@@ -8,6 +8,7 @@ pagination:
 ---
 {% for post in posts %}
   <article class="home-page-article">
+  <div class="title-date">
     <h1>
       <a href="{{ post.url | url }}" title="{{ post.data.title }}">{{ post.data.title }}</a>
     </h1>
@@ -23,11 +24,10 @@ pagination:
     days ago
     {% endif %}
     </time>
-    <time datetime="{{ post.date | dateISO }}" title="{{ post.date | dateLong }}">· {{ post.date | dateShort }}</time>
+  </div>
     {% excerpt post %}
   </article>
 {% endfor %}
-
 <nav id="pagination" aria-labelledby="pagination">
   <ol>
 {%- for pageEntry in pagination.pages %}
