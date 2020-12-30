@@ -1,11 +1,10 @@
 .home-page-article {
   border-bottom: 1px dotted #fafbfb;
-  max-width: 400px;
+  width: 80%;
   .title-date {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    max-width: 350px;
   }
   a {
     text-decoration: none;
@@ -16,9 +15,13 @@
     font-size: 12px;
     font-weight: 400;
     margin-left: 2em;
+    white-space: nowrap;
   }
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
+    @media (min-width: 415px) {
+      font-size: 2em;
+    }
     font-family: serif;
     font-weight: 500;
   }
@@ -26,6 +29,5 @@
     margin: 0.25em 0 0.5em 0;
     max-width: 325px;
     font-size: 14px;
-    padding: 0 5px;
   }
 }
