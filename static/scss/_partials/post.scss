@@ -60,13 +60,16 @@
   }
   // Table of Contents
   ul {
-    padding: 0.5em 1em;
+    padding: 0.5em 3em;
     background-color: #fbfbfb;
     list-style-position: inside;
     font-size: 12px;
     border-radius: 3px;
+    display: inline-block;
+    margin-left: 1em;
     li {
       margin: 1em 0;
+      list-style-type: square;
       ul {
         margin: 0 0;
         padding: 0 0 0 0.5em;
@@ -95,11 +98,6 @@
         transform-origin: bottom left;
         transform: scaleX(1);
       }
-    }
-    &:before {
-      content: 'Table of Contents';
-      font-size: 14px;
-      font-variant: small-caps;
     }
   }
 }
