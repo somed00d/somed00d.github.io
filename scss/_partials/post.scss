@@ -1,4 +1,6 @@
 .post {
+  display: grid;
+  place-content: center;
   img {
     border-radius: 5px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
