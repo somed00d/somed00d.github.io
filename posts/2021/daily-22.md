@@ -20,10 +20,10 @@ I'll leave you with the words of [Epictetus](https://en.wikipedia.org/wiki/Epict
 >
 > Well, if someone trains me to be even-tempered, am I not benefited in that case? This shows you do not know how to be helped by your fellow man. I have a bad neighbor –⁠ bad, that is, for himself. For me, though, he is good: he exercises my power of fairness and sociability. A bad father, likewise, is bad for himself, but for me represents a blessing. The wand of Hermes promises that 'whatever you touch will turn to gold.' For my part, I can say: bring illness, death, poverty, slander, a judgment of death: they will all be converted to advantage by my wand of Hermes.'
 >
-> 'What good will you get from death?'
-> 'I will make it your glory, or the occasion for you to show how a person obeys the will of nature.'
-> 'What will you make of illness?'
-> 'I will expose its true nature by outdoing myself in calmness and serenity; I will neither beg the doctor's help, nor pray for death. What more could you ask? Everything, you see, that you throw at me I will transform into a blessing, a boon –⁠ something dignified, even enviable. 
+> 'What good will you get from death?'  
+> 'I will make it your glory, or the occasion for you to show how a person obeys the will of nature.'  
+> 'What will you make of illness?'  
+> 'I will expose its true nature by outdoing myself in calmness and serenity; I will neither beg the doctor's help, nor pray for death. What more could you ask? Everything, you see, that you throw at me I will transform into a blessing, a boon –⁠ something dignified, even enviable.'  
 >
 > But no. Instead you say, 'Be careful that you don't get ill: it's bad.' Which is like saying, 'Guard against ever entertaining the idea that three is equivalent to four: it's bad.' How is it bad? If I weight the statement correctly, what harm can it do to me? It is more likely to help. Similarly, it is enough if I hold the right idea about poverty, illness, and removal from office: all such challenges will only serve my turn. No more, then should I look for bad, and good, in external conditions.
 >
